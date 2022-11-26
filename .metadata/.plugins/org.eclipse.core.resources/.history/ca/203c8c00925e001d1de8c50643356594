@@ -1,0 +1,16 @@
+package com.sampleCode.java;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i=1;
+		while(i<21)
+		{
+			System.out.println(i+"*12="+i*12);
+			i++;
+		}
+		
+	}
+
+}

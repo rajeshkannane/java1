@@ -1,0 +1,16 @@
+package com.ball.logic;
+
+import java.util.List;
+
+import com.ball.model.Ball;
+
+public class Weighing {
+
+	public Weighing() {
+		// TODO Auto-generated constructor stub
+		List <Ball> balls;
+		
+		
+	}
+
+}

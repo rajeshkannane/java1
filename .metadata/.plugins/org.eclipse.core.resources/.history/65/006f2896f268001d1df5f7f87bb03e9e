@@ -1,0 +1,37 @@
+package com.ball.logic;
+
+import java.util.List;
+
+import com.ball.model.Ball;
+
+public class BallInit {
+	Ball ball;
+
+	public BallInit() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public List <Ball> randomBall(){
+		
+		for (int i=1;i<9;i++) {
+			if (i==1){
+				int k=randomNumber();
+			}
+			Ball ball = new Ball();
+			
+		}
+		
+		
+		
+	return balls;
+	}
+	
+	public int randomNumber() {
+		int max=8, min=1;
+		int rand;
+		rand=(int)Math.floor(Math.random()*(max-min+1)+min);
+		return rand;
+	}
+	
+
+}

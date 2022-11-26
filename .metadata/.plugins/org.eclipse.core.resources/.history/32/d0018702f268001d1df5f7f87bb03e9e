@@ -1,0 +1,9 @@
+package com.ball.logic;
+
+public class BallInit {
+
+	public BallInit() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

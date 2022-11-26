@@ -1,0 +1,134 @@
+package com.ludo.game;
+
+import com.ludo.bean.Box;
+import com.ludo.bean.Ladder;
+import com.ludo.bean.Player;
+import com.ludo.bean.Snake;
+
+public class Game {
+	String menu;
+	public String status="Try";
+	
+
+	public Game() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public String getMenu() {
+		return menu;
+	}
+
+
+	public void setMenu(String menu) {
+		this.menu = menu;
+	}
+	public void initialPage() {
+		System.out.println("Menu option");
+		System.out.println("----------------");
+		System.out.println("1)Play ");
+		System.out.println("2)Reset ");
+		System.out.println("3)Pause ");
+		System.out.println("4)Exit ");
+		}
+	public void playSetup() {
+		for(int i=1;i<17;i++) {
+			Box box= new Box();
+			box.setId(i);
+			if (i==1) {
+				box.setBoxStatus("Start");
+			}
+			if (i==3) {
+				Ladder ladder = new Ladder();
+				ladder.setStart(i);
+				ladder.setEnd(10);
+				box.setLadder(ladder);
+				box.setBoxStatus("ladderStart");
+			}
+			if (i==9) {
+				Ladder ladder = new Ladder();
+				ladder.setStart(i);
+				ladder.setEnd(14);
+				box.setLadder(ladder);
+				box.setBoxStatus("ladderStart");
+			}
+			if (i==11) {
+				Snake snake = new Snake();
+				snake.setStart(i);
+				snake.setEnd(5);
+				box.setSnake(snake);
+				box.setBoxStatus("snakeStart");
+			}
+			if (i==15) {
+				Snake snake = new Snake();
+				snake.setStart(i);
+				snake.setEnd(8);
+				box.setSnake(snake);
+				box.setBoxStatus("snakeStart");
+			}
+			if (i==10) {
+				box.setBoxStatus("ladderEnd");
+			}
+			if (i==14) {
+				box.setBoxStatus("ladderEnd");
+			}
+			if (i==5) {
+				box.setBoxStatus("snakeEnd");
+			}
+			if (i==8) {
+				box.setBoxStatus("snakeEnd");
+			}
+			
+			
+			}
+		
+		
+	}
+	public int dice() {
+		int max=6, min=1;
+		int rand;
+		rand=(int)Math.floor(Math.random()*(max-min+1)+min);
+		return rand;
+	}
+	public void start(int number,Player player) {
+		player.setCurrentPosition(number);
+		player.setStatus("Start");
+		System.out.println("Game Started for Player"+player.getName());
+		
+	}
+	public void win(Player player) {
+		if (player.getCurrentPosition()==16) {
+			System.out.println(player.getName()+"WIN........!");
+			this.status="End";
+		}
+	}
+	public void play(Player player) {
+		int rand=dice();
+		System.out.println("Output Number: "+ rand);
+		if (player.getCurrentPosition()>=1) {
+			player.setCurrentPosition(player.getCurrentPosition()+rand);
+			Box box = new Box();
+			box.setId(player.getCurrentPosition());
+			if (player.getCurrentPosition()>16) {
+				System.out.println("Try Again");
+				player.setCurrentPosition(player.getCurrentPosition()-rand);
+			}
+		}
+		else {
+			System.out.println("Try Again");
+		}
+		
+	}
+	public int isLadder(Box box) {
+		if (box.getBoxStatus()=="ladderStart")
+		System.out.println("Found Ladder Box....");
+		return box.getLadder().getEnd();
+		
+	}
+	public int isSnake(Box box) {
+		if (box.getBoxStatus()=="snakeStart")
+			System.out.println("Found Snake Box.....");
+			return box.getSnake().getEnd();
+	}
+
+}

@@ -1,0 +1,34 @@
+package com.ball.model;
+
+public class Ball {
+	
+	int weight;
+	int id;
+	
+	public Ball(int weight, int id) {
+		// TODO Auto-generated constructor stub
+		this.weight = weight;
+		this.id = id;
+	}
+	public Ball() {
+		
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+
+}

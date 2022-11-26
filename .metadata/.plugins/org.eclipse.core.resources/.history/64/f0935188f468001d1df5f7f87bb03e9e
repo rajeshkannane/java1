@@ -1,0 +1,25 @@
+package com.ball.logic;
+
+import java.util.List;
+
+import com.ball.model.Ball;
+
+public class Weighing {
+
+	public Weighing() {
+		// TODO Auto-generated constructor stub
+		
+		
+	}
+	public void weighing() {
+		BallInit ballInit = new BallInit();
+		
+		List <Ball> balls = ballInit.randomBall();
+		System.out.println(balls);
+		List <Ball> selectedBalls; 
+		for(int i=1;i<7;i++) {
+           System.out.println(i); 			
+		}
+	}
+
+}

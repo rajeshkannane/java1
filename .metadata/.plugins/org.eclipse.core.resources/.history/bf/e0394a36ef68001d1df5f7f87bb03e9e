@@ -1,0 +1,9 @@
+package com.ball.logic;
+
+public class Weighing {
+
+	public Weighing() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

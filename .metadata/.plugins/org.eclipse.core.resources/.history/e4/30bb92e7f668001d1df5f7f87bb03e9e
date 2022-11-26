@@ -1,0 +1,39 @@
+package com.ball.logic;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ball.model.Ball;
+
+public class Weighing {
+	List <Ball> selectedBalls = new ArrayList<Ball>(); 
+	List <Ball> Aside = new ArrayList<Ball>(); 
+	List <Ball> Bside = new ArrayList<Ball>(); 
+	 
+	public Weighing() {
+		// TODO Auto-generated constructor stub
+		
+		
+	}
+	public void weighing() {
+		BallInit ballInit = new BallInit();
+		
+		List <Ball> balls = ballInit.randomBall();
+		
+		System.out.println("Print 8 Balls.......");
+		for(int i=0;i<8;i++) {
+			System.out.println(balls.get(i).getId());	
+			System.out.println(balls.get(i).getWeight());
+			}
+		
+		System.out.println("---------------------");
+		
+		for(int i=0;i<6;i++) {
+           System.out.println(i);
+           selectedBalls.add(balls.get(i));
+           
+           
+		}
+	}
+
+}

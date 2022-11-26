@@ -1,0 +1,26 @@
+package com.sampleCode.java;
+import java.util.Scanner; // Import the Scanner class
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i=1;
+		Scanner myObj = new Scanner(System.in); // Create a Scanner object
+		System.out.println("Type a number:");
+	    x = myObj.nextInt(); // Read user input
+		while(i<21)
+		{
+			if(i%2==0) {
+				System.out.println(i+"*12="+i*12);
+			}
+			else {
+				System.out.println(i+"is a ODD number");
+			}
+			
+			i++;
+		}
+		
+	}
+
+}

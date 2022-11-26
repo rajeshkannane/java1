@@ -1,0 +1,36 @@
+package com.sampleCode.java;
+import java.util.Scanner; // Import the Scanner class
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i=1;
+		int a;
+		int b;
+		int c;
+		Scanner myObj = new Scanner(System.in); // Create a Scanner object
+		System.out.println("Enter Value for a:");
+	    a = myObj.nextInt(); // Read user input
+	    System.out.println("Enter value for b:");
+	    b = myObj.nextInt(); // Read user input
+	    System.out.println("Select operation mode (for + enter 1, for - enter 2)");
+	    c = myObj.nextInt(); // Read user input
+	 
+		{
+			if(c==1) {
+				System.out.println(a+"+"+b+"="+(a+b));
+			}
+			if(c==2) {
+				System.out.println(a+"-"+b+"="+(a-b));
+			}
+			else {
+				System.out.println(i+"is a ODD number");
+			}
+			
+			i++;
+		}
+		
+	}
+
+}
